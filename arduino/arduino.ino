@@ -1,7 +1,8 @@
 const int trigPin = 9;
 const int echoPin = 10;
 
-float duration, distance;
+float duration;
+double distance;
 
 void setup() {
   pinMode(trigPin, OUTPUT);
@@ -19,6 +20,7 @@ void loop() {
   duration = pulseIn(echoPin, HIGH);
   distance = (duration*.0343)/2;
   /*Serial.print("Distance: "); */
+  //Serial.println(distance, 2);
   Serial.println(distance, 2);
   delay(500);
 }
